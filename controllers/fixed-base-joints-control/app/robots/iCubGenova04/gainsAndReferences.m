@@ -8,11 +8,17 @@
 if Config.MOVE_JOINTS
     
     % Postural task gains
-    KP = 20*diag(ones(1,ROBOT_DOF));
+    KP = 30*diag(ones(1,ROBOT_DOF));
     KD = 2*sqrt(KP)*0;
     
-    Ref.Amplitude = 7.5*[0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 1 0 0, 0 0 0 0 0 0];
-    Ref.Frequency = 0.5*[0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 1 0 0, 0 0 0 0 0 0];
+%     Ref.Amplitude = 7.5*[0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 1 0 0, 0 0 0 0 0 0];
+%     Ref.Frequency = 0.5*[0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 1 0 0, 0 0 0 0 0 0];
+
+     Ref.Amplitude = 7.5*ones(1,ROBOT_DOF);
+     Ref.Frequency = 0.5*ones(1,ROBOT_DOF);
+     Ref.Amplitude(1:3) = 0;
+     Ref.Frequency(1:3) = 0;
+
 else    
     % Postural task gains
     KP = 0*diag(ones(1,ROBOT_DOF));

@@ -1,12 +1,12 @@
 Model {
   Name			  "jointsControl"
-  Version		  9.0
+  Version		  9.1
   SavedCharacterEncoding  "UTF-8"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.361"
+    ComputedModelVersion    "1.370"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -62,8 +62,8 @@ Model {
     }
     ExternalFileReference {
       Reference		      "WBToolboxLibrary/Actuators/SetReferences"
-      Path		      "jointsControl/SetReferences"
-      SID		      "137"
+      Path		      "jointsControl/SetReferences1"
+      SID		      "677"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
@@ -92,11 +92,13 @@ Model {
     }
     OrderedModelArguments   1
   }
+  DiagnosticSuppressor	  "on"
+  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 1 0"
+  Notes			  ""
+  NotesPlugin		  "on"
   LogicAnalyzerGraphicalSettings ""
   LogicAnalyzerPlugin	  "on"
   LogicAnalyzerSignalOrdering ""
-  DiagnosticSuppressor	  "on"
-  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 11 0"
   CustomCodeFunctionData  ""
   SLCCPlugin		  "on"
   PostLoadFcn		  "%% Try to open the static GUI\ntry\n\n    staticGUI = simulinkStaticGUI;\n\nend"
@@ -133,7 +135,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [53.0, 27.0, 2507.0, 1413.0]
+      Location		      [67.0, 27.0, 1853.0, 1053.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -156,10 +158,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"315"
-	Extents			[2469.0, 1236.0]
-	ZoomFactor		[1.3645745531093458]
-	Offset			[260.402780165477, -96.796148527351761]
+	LoadSaveID		"310"
+	Extents			[1815.0, 873.0]
+	ZoomFactor		[1.5]
+	Offset			[-438.17587738684585, -189.69212635549263]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -179,7 +181,7 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABiAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAALAD///8AAAnLAAAFEgAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAALAD///8AAAc9AAADqAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAACA/////wAAAAAAAAAA/////wEAAADo/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFo/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAANR/////wAAAAAAAAAA/"
@@ -191,11 +193,11 @@ Model {
   Creator		  "daniele"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "gromualdi"
+  LastModifiedBy	  "icub"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 05 11:51:32 2019"
-  RTWModifiedTimeStamp	  497447456
-  ModelVersionFormat	  "1.%<AutoIncrement:361>"
+  LastModifiedDate	  "Thu Dec 05 16:33:27 2019"
+  RTWModifiedTimeStamp	  497463524
+  ModelVersionFormat	  "1.%<AutoIncrement:370>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -216,6 +218,7 @@ Model {
   ShowViewerIcons	  on
   SortedOrder		  on
   VariantCondition	  off
+  ShowSubsystemDomainSpec off
   ExecutionContextIcon	  off
   ShowLinearizationAnnotations on
   ShowVisualizeInsertedRTB on
@@ -229,6 +232,7 @@ Model {
   BrowserShowLibraryLinks off
   FunctionConnectors	  off
   BrowserLookUnderMasks	  off
+  MultiThreadCoSim	  on
   SimulationMode	  "normal"
   VisualizeLoggedSignalsWhenLoggingToFile off
   PauseTimes		  "5"
@@ -236,6 +240,8 @@ Model {
   SnapshotBufferSize	  10
   SnapshotInterval	  10
   NumberOfLastSnapshots	  0
+  EnablePacing		  off
+  PacingRate		  1
   LinearizationMsg	  "none"
   Profile		  off
   ParamWorkspaceSource	  "MATLABWorkspace"
@@ -291,7 +297,7 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      8
-      Version		      "1.17.1"
+      Version		      "1.18.0"
       DisabledProps	      []
       Description	      ""
       Array {
@@ -299,12 +305,13 @@ Model {
 	Dimension		9
 	Simulink.SolverCC {
 	  $ObjectID		  9
-	  Version		  "1.17.1"
+	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
 	  StopTime		  "Config.SIMULATION_TIME"
 	  AbsTol		  "auto"
+	  AutoScaleAbsTol	  "on"
 	  FixedStep		  "Config.tStep"
 	  InitialStep		  "auto"
 	  MaxOrder		  5
@@ -335,10 +342,11 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	  SampleTimeProperty	  []
 	  DecoupledContinuousIntegration off
+	  MinimalZcImpactIntegration off
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  10
-	  Version		  "1.17.1"
+	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  Decimation		  "1"
@@ -379,7 +387,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  11
-	  Version		  "1.17.1"
+	  Version		  "1.18.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -438,10 +446,15 @@ Model {
 	  OptimizeDataStoreBuffers on
 	  BusAssignmentInplaceUpdate on
 	  DifferentSizesBufferReuse off
+	  OptimizationLevel	  "level2"
+	  OptimizationPriority	  "Balanced"
+	  OptimizationCustomize	  on
+	  UseRowMajorAlgorithm	  off
+	  LabelGuidedReuse	  off
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  12
-	  Version		  "1.17.1"
+	  Version		  "1.18.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    1
@@ -453,6 +466,7 @@ Model {
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
 	  SignalInfNanChecking	  "none"
+	  StringTruncationChecking "error"
 	  SignalRangeChecking	  "none"
 	  ReadBeforeWriteMsg	  "UseLocalSettings"
 	  WriteAfterWriteMsg	  "UseLocalSettings"
@@ -523,6 +537,7 @@ Model {
 	  SimStateInterfaceChecksumMismatchMsg "warning"
 	  SimStateOlderReleaseMsg "error"
 	  ChecksumConsistencyForSSReuse	"none"
+	  LibraryContextMissingDiagnostic "none"
 	  InitInArrayFormatMsg	  "warning"
 	  StrictBusMsg		  "ErrorOnBusTreatedAsVector"
 	  BusNameAdapt		  "WarnAndRepair"
@@ -556,7 +571,7 @@ Model {
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  13
-	  Version		  "1.17.1"
+	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  ProdBitPerChar	  8
@@ -604,7 +619,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  14
-	  Version		  "1.17.1"
+	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
@@ -623,7 +638,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  15
-	  Version		  "1.17.1"
+	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  SimCustomSourceCode	  ""
@@ -653,7 +668,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  16
-	  Version		  "1.17.1"
+	  Version		  "1.18.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    16
@@ -740,7 +755,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      17
-	      Version		      "1.17.1"
+	      Version		      "1.18.0"
 	      Array {
 		Type			"Cell"
 		Dimension		28
@@ -814,6 +829,7 @@ Model {
 	      InsertBlockDesc	      off
 	      InsertPolySpaceComments off
 	      SimulinkBlockComments   on
+	      BlockCommentType	      "BlockPathComment"
 	      StateflowObjectComments on
 	      MATLABSourceComments    off
 	      EnableCustomComments    off
@@ -827,7 +843,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      18
-	      Version		      "1.17.1"
+	      Version		      "1.18.0"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -859,6 +875,7 @@ Model {
 	      UtilityFuncGeneration   "Auto"
 	      MultiwordTypeDef	      "System defined"
 	      MultiwordLength	      2048
+	      DynamicStringBufferSize 256
 	      GenerateFullHeader      on
 	      InferredTypesCompatibility off
 	      ExistingSharedCode      ""
@@ -905,6 +922,9 @@ Model {
 	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
 	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
 	      ArrayLayout	      "Column-major"
+	      ERTHeaderFileRootName   "$R$E"
+	      ERTSourceFileRootName   "$R$E"
+	      ERTDataFileRootName     "$R_data"
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -926,7 +946,7 @@ Model {
 	}
 	SlCovCC.ConfigComp {
 	  $ObjectID		  19
-	  Version		  "1.17.1"
+	  Version		  "1.18.0"
 	  DisabledProps		  []
 	  Description		  "Simulink Coverage Configuration Component"
 	  Name			  "Simulink Coverage"
@@ -1182,11 +1202,11 @@ Model {
       FunctionName	      "system"
       SFunctionModules	      "''"
       PortCounts	      "[]"
+      MultiThreadCoSim	      "auto"
     }
     Block {
       BlockType		      Scope
       DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
-      Floating		      off
     }
     Block {
       BlockType		      Selector
@@ -1234,6 +1254,7 @@ Model {
       Opaque		      off
       MaskHideContents	      off
       SFBlockType	      "NONE"
+      Variant		      off
       GeneratePreprocessorConditionals off
       AllowZeroVariantControls off
       PropagateVariantConditions off
@@ -1278,6 +1299,8 @@ Model {
     Location		    [67, 27, 1920, 1080]
     Open		    off
     PortBlocksUseCompactNotation off
+    SetDomainSpec	    off
+    DomainSpecType	    "Deduce"
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1288,9 +1311,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "393"
+    ZoomFactor		    "200"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "676"
+    SIDHighWatermark	    "682"
     Block {
       BlockType		      Reference
       Name		      "Configuration"
@@ -1318,7 +1341,6 @@ Model {
       BackgroundColor	      "[0.333333, 1.000000, 1.000000]"
       ShowName		      off
       RequestExecContextInheritance off
-      Variant		      off
       Object {
 	$PropName		"MaskObject"
 	$ObjectID		21
@@ -1327,9 +1349,11 @@ Model {
       }
       System {
 	Name			"Dump and visualize"
-	Location		[53, 27, 2560, 1440]
+	Location		[67, 27, 1920, 1080]
 	Open			off
 	PortBlocksUseCompactNotation off
+	SetDomainSpec		off
+	DomainSpecType		"Deduce"
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1340,7 +1364,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"400"
+	ZoomFactor		"250"
 	Block {
 	  BlockType		  From
 	  Name			  "From"
@@ -1421,12 +1445,13 @@ Model {
 	  Position		  [1960, 591, 2080, 644]
 	  ZOrder		  955
 	  RequestExecContextInheritance	off
-	  Variant		  off
 	  System {
 	    Name		    "Joint Positions"
-	    Location		    [134, 55, 3840, 2160]
+	    Location		    [67, 27, 1920, 1080]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1437,7 +1462,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "433"
+	    ZoomFactor		    "205"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "jointPos"
@@ -1619,103 +1644,79 @@ Model {
 	      "]),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggi"
 	      "ng',true,'DataLoggingVariableName','jointPos_Desired_DATA','DataLoggingSaveFormat','StructureWithTime','DataLog"
 	      "gingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'Serializ"
-	      "edDisplays',{struct('MinYLimReal','-3.89489','MaxYLimReal','10.78123','YLabelReal','','MinYLimMag','0.00000','M"
-	      "axYLimMag','10.78123','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0"
-	      "],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;"
-	      "0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608"
-	      " 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803"
-	      "92156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0"
-	      ".5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visi"
-	      "ble','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color"
-	      "',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-"
-	      "','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marke"
-	      "r','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'"
-	      "Placement',1),struct('MinYLimReal','-55.86221','MaxYLimReal','56.64498','YLabelReal','','MinYLimMag','0','MaxYL"
-	      "imMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTic"
-	      "kColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450980"
-	      "39215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098"
-	      "039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],"
-	      "'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker"
-	      "','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')"
-	      ",struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],"
-	      "'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWid"
-	      "th',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none',"
-	      "'Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement'"
-	      ",2),struct('MinYLimReal','-37.08127','MaxYLimReal','60.75093','YLabelReal','','MinYLimMag','0','MaxYLimMag','10"
-	      "','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0"
-	      ".686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0"
-	      ".623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;"
-	      "0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%"
-	      "<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('C"
-	      "olor',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle"
-	      "','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'M"
-	      "arker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible',"
-	      "'on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',3),struct"
-	      "('MinYLimReal','-23.26658','MaxYLimReal','16.4551','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVi"
-	      "sibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862745098"
-	      "03922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235294117"
-	      "64706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058"
-	      "823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabe"
-	      "l>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','o"
-	      "n'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 "
-	      "1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','Line"
-	      "Width',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','non"
-	      "e','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'Us"
-	      "erDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',4),struct('MinYLimRe"
-	      "al','-14.29126','MaxYLimReal','25.50069','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility',"
-	      "'on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68"
-	      "6274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 "
-	      "0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2"
-	      "74509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LineP"
-	      "ropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct"
-	      "('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineSt"
-	      "yle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5"
-	      ",'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
-	      "e','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedC"
-	      "hannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',5)},'DisplayPropertyDefaults',"
-	      "struct('YLabelReal','','AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.6862745098039"
-	      "22],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160784313"
-	      "72549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294"
-	      "117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Col"
-	      "or',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle',"
-	      "'-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Mar"
-	      "ker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','o"
-	      "n'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 "
-	      "1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',"
-	      "0,'LineNames',{{[]}},'ShowContent',true,'Placement',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayL"
-	      "ayoutDimensions',[5 1],'DisplayContentCache',{struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('C"
-	      "olor',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle"
-	      "','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'M"
-	      "arker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible',"
-	      "'on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 "
-	      "0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagP"
-	      "hase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','Li"
-	      "neWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','n"
-	      "one','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),str"
-	      "uct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'Lin"
-	      "eStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',"
-	      "0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<Si"
-	      "gnalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
-	      "ible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Colo"
-	      "r',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','"
-	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Mark"
-	      "er','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache'"
-	      ",{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1"
-	      "],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineW"
-	      "idth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none"
-	      "','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct"
-	      "('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{"
-	      "}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineSt"
-	      "yle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5"
-	      ",'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
-	      "e','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',"
-	      "[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-',"
-	      "'LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false)}),extmgr"
-	      ".Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration"
-	      "('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Location',[135 184 3841 2132])"
+	      "edDisplays',{struct('MinYLimReal','-3.93243','MaxYLimReal','2.37786','YLabelReal','','MinYLimMag','0.00000','Ma"
+	      "xYLimMag','3.93243','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],"
+	      "'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0."
+	      "0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0"
+	      ".0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392"
+	      "156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5"
+	      ",'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
+	      "e','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',"
+	      "[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-',"
+	      "'LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker'"
+	      ",'none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'torso:1','torso:2','torso:"
+	      "3'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-55.43804','MaxYLimReal','70.07186','YLabelReal','"
+	      "','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
+	      "esColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06"
+	      "66666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0."
+	      "831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392"
+	      "15686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-"
+	      "','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marke"
+	      "r','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'"
+	      "),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0]"
+	      ",'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWi"
+	      "dth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',4,'LineNames',{{'left_arm:"
+	      "1','left_arm:2','left_arm:3','left_arm:4'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-54.56325',"
+	      "'MaxYLimReal','70.82306','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',tru"
+	      "e,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0."
+	      "686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.41176470588235"
+	      "3 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1"
+	      ";0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',"
+	      "{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1]"
+	      ",'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWi"
+	      "dth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none'"
+	      ",'Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct("
+	      "'Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}"
+	      "},'NumLines',4,'LineNames',{{'right_arm:1','right_arm:2','right_arm:3','right_arm:4'}},'ShowContent',true,'Plac"
+	      "ement',3),struct('MinYLimReal','-43.55492','MaxYLimReal','29.81099','YLabelReal','','MinYLimMag','0','MaxYLimMa"
+	      "g','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCol"
+	      "or',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803921"
+	      "5686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980392"
+	      "15686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Tit"
+	      "le','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','n"
+	      "one','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),str"
+	      "uct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'Lin"
+	      "eStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',"
+	      "0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
+	      "ible','on')}},'UserDefinedChannelNames',{{}},'NumLines',6,'LineNames',{{'left_leg:1','left_leg:2','left_leg:3',"
+	      "'left_leg:4','left_leg:5','left_leg:6'}},'ShowContent',true,'Placement',4),struct('MinYLimReal','-57.09492','Ma"
+	      "xYLimReal','40.54398','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'"
+	      "YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686"
+	      "274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0"
+	      ".16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0."
+	      "0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{s"
+	      "truct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'L"
+	      "ineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth"
+	      "',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','V"
+	      "isible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Co"
+	      "lor',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'"
+	      "NumLines',6,'LineNames',{{'right_leg:1','right_leg:2','right_leg:3','right_leg:4','right_leg:5','right_leg:6'}}"
+	      ",'ShowContent',true,'Placement',5)},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 0],'AxesT"
+	      "ickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509"
+	      "8039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450"
+	      "98039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863"
+	      "],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Mark"
+	      "er','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
+	      "'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0"
+	      "],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineW"
+	      "idth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none"
+	      "','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placemen"
+	      "t',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[5 1],'DisplayContentCache',[]),"
+	      "extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configu"
+	      "ration('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Location',[157 570 2010 1538],'Visibl"
+	      "eAtModelOpen','on')"
 	      NumInputPorts	      "5"
+	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -1826,6 +1827,7 @@ Model {
 	      "iguration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Too"
 	      "ls','Measurements',true,'Version','2018a')),'Version','2018a','Location',[358 457 1618 936])"
 	      NumInputPorts	      "5"
+	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -1839,103 +1841,79 @@ Model {
 	      "]),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggi"
 	      "ng',true,'DataLoggingVariableName','jointPos_DATA','DataLoggingSaveFormat','StructureWithTime','DataLoggingDeci"
 	      "mation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDispla"
-	      "ys',{struct('MinYLimReal','-3.76082','MaxYLimReal','10.86268','YLabelReal','','MinYLimMag','0.00000','MaxYLimMa"
-	      "g','10.86268','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesT"
-	      "ickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509"
-	      "8039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450"
-	      "98039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863"
-	      "],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Mark"
-	      "er','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0"
-	      "],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineW"
-	      "idth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none"
-	      "','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placemen"
-	      "t',1),struct('MinYLimReal','-55.80993','MaxYLimReal','56.64084','YLabelReal','','MinYLimMag','0','MaxYLimMag','"
-	      "10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',"
-	      "[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686"
-	      " 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509803921568"
-	      "6;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title',"
-	      "'%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none'"
-	      ",'Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct("
-	      "'Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineSty"
-	      "le','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,"
-	      "'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible"
-	      "','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',2),stru"
-	      "ct('MinYLimReal','-37.08714','MaxYLimReal','60.76943','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','Legen"
-	      "dVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862745"
-	      "09803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235294"
-	      "11764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647"
-	      "058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalL"
-	      "abel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible'"
-	      ",'on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0"
-	      " 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','L"
-	      "ineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','"
-	      "none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},"
-	      "'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',3),struct('MinYLi"
-	      "mReal','-23.09357','MaxYLimReal','16.52336','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibilit"
-	      "y','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0"
-	      ".686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1"
-	      ";1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 "
-	      "0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','Li"
-	      "nePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),str"
-	      "uct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'Lin"
-	      "eStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',"
-	      "0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
-	      "ible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefin"
-	      "edChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',4),struct('MinYLimReal','-1"
-	      "4.03854','MaxYLimReal','24.89524','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','X"
-	      "Grid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509"
-	      "803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.41176"
-	      "4705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27450980"
-	      "3921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LineProperti"
-	      "esCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color"
-	      "',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-"
-	      "','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marke"
-	      "r','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'"
-	      "),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelN"
-	      "ames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',5)},'DisplayPropertyDefaults',struct("
-	      "'YLabelReal','','AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'Co"
-	      "lorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0"
-	      ".392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 "
-	      "1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 "
-	      "1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','Li"
-	      "neWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','n"
-	      "one','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),str"
-	      "uct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'Lin"
-	      "eStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'Line"
-	      "Names',{{[]}},'ShowContent',true,'Placement',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDi"
-	      "mensions',[5 1],'DisplayContentCache',{struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',["
-	      "1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','"
-	      "LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker',"
-	      "'none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),s"
-	      "truct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'L"
-	      "ineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',f"
-	      "alse),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth"
-	      "',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','V"
-	      "isible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Co"
-	      "lor',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle'"
-	      ",'-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Ma"
-	      "rker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLab"
-	      "el>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','"
-	      "on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1"
-	      " 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','Lin"
-	      "eWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','no"
-	      "ne','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'U"
-	      "serDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{stru"
-	      "ct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'Line"
-	      "Style','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0"
-	      ".5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visi"
-	      "ble','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color"
-	      "',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'Plo"
-	      "tMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-"
-	      "','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marke"
-	      "r','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'"
-	      "),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0]"
-	      ",'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWi"
-	      "dth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false)}),extmgr.Config"
-	      "uration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools"
-	      "','Measurements',true,'Version','2018a')),'Version','2018a','Location',[1175 719 2455 1410])"
+	      "ys',{struct('MinYLimReal','-5.43825','MaxYLimReal','8.40456','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag"
+	      "','8.40456','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTic"
+	      "kColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450980"
+	      "39215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098"
+	      "039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],"
+	      "'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker"
+	      "','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')"
+	      ",struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],"
+	      "'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWid"
+	      "th',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none',"
+	      "'Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'torso:1','torso:2','torso:3'}},'Sh"
+	      "owContent',true,'Placement',1),struct('MinYLimReal','-53.47883','MaxYLimReal','68.55211','YLabelReal','','MinYL"
+	      "imMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor'"
+	      ",[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666"
+	      "666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83137254"
+	      "9019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0."
+	      "650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineW"
+	      "idth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none"
+	      "','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct"
+	      "('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineSt"
+	      "yle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5"
+	      ",'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',4,'LineNames',{{'left_arm:1','left"
+	      "_arm:2','left_arm:3','left_arm:4'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-51.43949','MaxYLim"
+	      "Real','69.36922','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid"
+	      "',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68627450"
+	      "9803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.1607"
+	      "8431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.05882"
+	      "35294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct"
+	      "('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineSt"
+	      "yle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5"
+	      ",'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
+	      "e','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',"
+	      "[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLi"
+	      "nes',4,'LineNames',{{'right_arm:1','right_arm:2','right_arm:3','right_arm:4'}},'ShowContent',true,'Placement',3"
+	      "),struct('MinYLimReal','-47.4844','MaxYLimReal','32.07054','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','"
+	      "LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68"
+	      "6274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62"
+	      "3529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7"
+	      "17647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Si"
+	      "gnalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
+	      "ible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Colo"
+	      "r',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','"
+	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Mark"
+	      "er','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
+	      "')}},'UserDefinedChannelNames',{{}},'NumLines',6,'LineNames',{{'left_leg:1','left_leg:2','left_leg:3','left_leg"
+	      ":4','left_leg:5','left_leg:6'}},'ShowContent',true,'Placement',4),struct('MinYLimReal','-69.64868','MaxYLimReal"
+	      "','47.47273','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',tr"
+	      "ue,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803"
+	      "922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431"
+	      "372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.058823529"
+	      "4117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Co"
+	      "lor',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle'"
+	      ",'-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Ma"
+	      "rker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','"
+	      "on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0"
+	      " 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines'"
+	      ",6,'LineNames',{{'right_leg:1','right_leg:2','right_leg:3','right_leg:4','right_leg:5','right_leg:6'}},'ShowCon"
+	      "tent',true,'Placement',5)},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 0],'AxesTickColor'"
+	      ",[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803921568"
+	      "6 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980392156"
+	      "86;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title'"
+	      ",'%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none"
+	      "','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct"
+	      "('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineSt"
+	      "yle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5"
+	      ",'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
+	      "e','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1),'Ti"
+	      "meRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[5 1],'DisplayContentCache',[]),extmgr.Co"
+	      "nfiguration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('T"
+	      "ools','Measurements',true,'Version','2018a')),'Version','2018a','Location',[514 214 1794 905],'VisibleAtModelOp"
+	      "en','on')"
 	      NumInputPorts	      "5"
+	      Floating		      off
 	    }
 	    Line {
 	      Name		      "jointPos Measured"
@@ -2148,12 +2126,13 @@ Model {
 	  Position		  [1965, 769, 2070, 841]
 	  ZOrder		  985
 	  RequestExecContextInheritance	off
-	  Variant		  off
 	  System {
 	    Name		    "Joint References"
 	    Location		    [134, 55, 3840, 2160]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2232,6 +2211,7 @@ Model {
 	      "Y'),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Position',[135 1 37"
 	      "06 1990])"
 	      NumInputPorts	      "3"
+	      Floating		      off
 	    }
 	    Line {
 	      ZOrder		      41
@@ -2264,12 +2244,13 @@ Model {
 	  Position		  [1965, 670, 2075, 740]
 	  ZOrder		  954
 	  RequestExecContextInheritance	off
-	  Variant		  off
 	  System {
 	    Name		    "Joint Torques"
-	    Location		    [53, 27, 2560, 1440]
-	    Open		    on
+	    Location		    [67, 27, 1920, 1080]
+	    Open		    off
 	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2280,7 +2261,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "136"
+	    ZoomFactor		    "98"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "jointTorques_des"
@@ -2506,7 +2487,6 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
-	      Variant		      off
 	      Port {
 		PortNumber		1
 		Name			"torso"
@@ -2517,6 +2497,8 @@ Model {
 		Location		[223, 338, 826, 833]
 		Open			off
 		PortBlocksUseCompactNotation off
+		SetDomainSpec		off
+		DomainSpecType		"Deduce"
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -2528,7 +2510,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"22"
+		SIDHighWatermark	"25"
 		Block {
 		  BlockType		  Inport
 		  Name			  "measured"
@@ -2549,20 +2531,20 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "662::20"
+		  SID			  "662::24"
 		  Ports			  [1, 1]
 		  Position		  [270, 230, 320, 270]
-		  ZOrder		  11
+		  ZOrder		  15
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "662::19"
+		  SID			  "662::23"
 		  Tag			  "Stateflow S-Function jointsControl 2"
 		  Ports			  [2, 2]
 		  Position		  [180, 100, 230, 160]
-		  ZOrder		  10
+		  ZOrder		  14
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[2 2]"
 		  SFunctionDeploymentMode off
@@ -2576,9 +2558,9 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "662::21"
+		  SID			  "662::25"
 		  Position		  [460, 241, 480, 259]
-		  ZOrder		  12
+		  ZOrder		  16
 		}
 		Block {
 		  BlockType		  Outport
@@ -2589,14 +2571,15 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  9
+		  ZOrder		  14
 		  SrcBlock		  "measured"
 		  SrcPort		  1
+		  Points		  [120, 0]
 		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  10
+		  ZOrder		  15
 		  SrcBlock		  "desired"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
@@ -2604,7 +2587,7 @@ Model {
 		}
 		Line {
 		  Name			  "u"
-		  ZOrder		  11
+		  ZOrder		  16
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -2612,14 +2595,14 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  12
+		  ZOrder		  17
 		  SrcBlock		  " Demux "
 		  SrcPort		  1
 		  DstBlock		  " Terminator "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  13
+		  ZOrder		  18
 		  SrcBlock		  " SFunction "
 		  SrcPort		  1
 		  DstBlock		  " Demux "
@@ -2639,7 +2622,6 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
-	      Variant		      off
 	      Port {
 		PortNumber		1
 		Name			"left_arm"
@@ -2650,6 +2632,8 @@ Model {
 		Location		[223, 338, 826, 833]
 		Open			off
 		PortBlocksUseCompactNotation off
+		SetDomainSpec		off
+		DomainSpecType		"Deduce"
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -2661,7 +2645,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"22"
+		SIDHighWatermark	"25"
 		Block {
 		  BlockType		  Inport
 		  Name			  "measured"
@@ -2682,20 +2666,20 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "664::20"
+		  SID			  "664::24"
 		  Ports			  [1, 1]
 		  Position		  [270, 230, 320, 270]
-		  ZOrder		  11
+		  ZOrder		  15
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "664::19"
+		  SID			  "664::23"
 		  Tag			  "Stateflow S-Function jointsControl 1"
 		  Ports			  [2, 2]
 		  Position		  [180, 100, 230, 160]
-		  ZOrder		  10
+		  ZOrder		  14
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[2 2]"
 		  SFunctionDeploymentMode off
@@ -2709,9 +2693,9 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "664::21"
+		  SID			  "664::25"
 		  Position		  [460, 241, 480, 259]
-		  ZOrder		  12
+		  ZOrder		  16
 		}
 		Block {
 		  BlockType		  Outport
@@ -2722,22 +2706,23 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  1
-		  SrcBlock		  " SFunction "
+		  ZOrder		  6
+		  SrcBlock		  "measured"
 		  SrcPort		  1
-		  DstBlock		  " Demux "
+		  Points		  [120, 0]
+		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  2
-		  SrcBlock		  " Demux "
+		  ZOrder		  7
+		  SrcBlock		  "desired"
 		  SrcPort		  1
-		  DstBlock		  " Terminator "
-		  DstPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  2
 		}
 		Line {
 		  Name			  "u"
-		  ZOrder		  3
+		  ZOrder		  8
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -2745,17 +2730,17 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  4
-		  SrcBlock		  "desired"
+		  ZOrder		  9
+		  SrcBlock		  " Demux "
 		  SrcPort		  1
-		  DstBlock		  " SFunction "
-		  DstPort		  2
+		  DstBlock		  " Terminator "
+		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  5
-		  SrcBlock		  "measured"
+		  ZOrder		  10
+		  SrcBlock		  " SFunction "
 		  SrcPort		  1
-		  DstBlock		  " SFunction "
+		  DstBlock		  " Demux "
 		  DstPort		  1
 		}
 	      }
@@ -2772,7 +2757,6 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
-	      Variant		      off
 	      Port {
 		PortNumber		1
 		Name			"right_arm"
@@ -2783,6 +2767,8 @@ Model {
 		Location		[223, 338, 826, 833]
 		Open			off
 		PortBlocksUseCompactNotation off
+		SetDomainSpec		off
+		DomainSpecType		"Deduce"
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -2794,7 +2780,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"22"
+		SIDHighWatermark	"25"
 		Block {
 		  BlockType		  Inport
 		  Name			  "measured"
@@ -2815,20 +2801,20 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "665::20"
+		  SID			  "665::24"
 		  Ports			  [1, 1]
 		  Position		  [270, 230, 320, 270]
-		  ZOrder		  11
+		  ZOrder		  15
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "665::19"
+		  SID			  "665::23"
 		  Tag			  "Stateflow S-Function jointsControl 3"
 		  Ports			  [2, 2]
 		  Position		  [180, 100, 230, 160]
-		  ZOrder		  10
+		  ZOrder		  14
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[2 2]"
 		  SFunctionDeploymentMode off
@@ -2842,9 +2828,9 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "665::21"
+		  SID			  "665::25"
 		  Position		  [460, 241, 480, 259]
-		  ZOrder		  12
+		  ZOrder		  16
 		}
 		Block {
 		  BlockType		  Outport
@@ -2855,14 +2841,15 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  1
+		  ZOrder		  6
 		  SrcBlock		  "measured"
 		  SrcPort		  1
+		  Points		  [120, 0]
 		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  2
+		  ZOrder		  7
 		  SrcBlock		  "desired"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
@@ -2870,7 +2857,7 @@ Model {
 		}
 		Line {
 		  Name			  "u"
-		  ZOrder		  3
+		  ZOrder		  8
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -2878,14 +2865,14 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  4
+		  ZOrder		  9
 		  SrcBlock		  " Demux "
 		  SrcPort		  1
 		  DstBlock		  " Terminator "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  5
+		  ZOrder		  10
 		  SrcBlock		  " SFunction "
 		  SrcPort		  1
 		  DstBlock		  " Demux "
@@ -2905,12 +2892,18 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
-	      Variant		      off
+	      Port {
+		PortNumber		1
+		Name			"leftLeg"
+		PropagatedSignals	"u"
+	      }
 	      System {
 		Name			"MATLAB Function3"
 		Location		[223, 338, 826, 833]
 		Open			off
 		PortBlocksUseCompactNotation off
+		SetDomainSpec		off
+		DomainSpecType		"Deduce"
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -2922,7 +2915,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"22"
+		SIDHighWatermark	"25"
 		Block {
 		  BlockType		  Inport
 		  Name			  "measured"
@@ -2943,20 +2936,20 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "666::20"
+		  SID			  "666::24"
 		  Ports			  [1, 1]
 		  Position		  [270, 230, 320, 270]
-		  ZOrder		  11
+		  ZOrder		  15
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "666::19"
+		  SID			  "666::23"
 		  Tag			  "Stateflow S-Function jointsControl 4"
 		  Ports			  [2, 2]
 		  Position		  [180, 100, 230, 160]
-		  ZOrder		  10
+		  ZOrder		  14
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[2 2]"
 		  SFunctionDeploymentMode off
@@ -2970,9 +2963,9 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "666::21"
+		  SID			  "666::25"
 		  Position		  [460, 241, 480, 259]
-		  ZOrder		  12
+		  ZOrder		  16
 		}
 		Block {
 		  BlockType		  Outport
@@ -2983,22 +2976,23 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  1
-		  SrcBlock		  " SFunction "
+		  ZOrder		  6
+		  SrcBlock		  "measured"
 		  SrcPort		  1
-		  DstBlock		  " Demux "
+		  Points		  [120, 0]
+		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  2
-		  SrcBlock		  " Demux "
+		  ZOrder		  7
+		  SrcBlock		  "desired"
 		  SrcPort		  1
-		  DstBlock		  " Terminator "
-		  DstPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  2
 		}
 		Line {
 		  Name			  "u"
-		  ZOrder		  3
+		  ZOrder		  8
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -3006,17 +3000,17 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  4
-		  SrcBlock		  "desired"
+		  ZOrder		  9
+		  SrcBlock		  " Demux "
 		  SrcPort		  1
-		  DstBlock		  " SFunction "
-		  DstPort		  2
+		  DstBlock		  " Terminator "
+		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  5
-		  SrcBlock		  "measured"
+		  ZOrder		  10
+		  SrcBlock		  " SFunction "
 		  SrcPort		  1
-		  DstBlock		  " SFunction "
+		  DstBlock		  " Demux "
 		  DstPort		  1
 		}
 	      }
@@ -3033,12 +3027,18 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
-	      Variant		      off
+	      Port {
+		PortNumber		1
+		Name			"rightLeg"
+		PropagatedSignals	"u"
+	      }
 	      System {
 		Name			"MATLAB Function4"
 		Location		[223, 338, 826, 833]
 		Open			off
 		PortBlocksUseCompactNotation off
+		SetDomainSpec		off
+		DomainSpecType		"Deduce"
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -3050,7 +3050,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"22"
+		SIDHighWatermark	"25"
 		Block {
 		  BlockType		  Inport
 		  Name			  "measured"
@@ -3071,20 +3071,20 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "667::20"
+		  SID			  "667::24"
 		  Ports			  [1, 1]
 		  Position		  [270, 230, 320, 270]
-		  ZOrder		  11
+		  ZOrder		  15
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "667::19"
+		  SID			  "667::23"
 		  Tag			  "Stateflow S-Function jointsControl 5"
 		  Ports			  [2, 2]
 		  Position		  [180, 100, 230, 160]
-		  ZOrder		  10
+		  ZOrder		  14
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[2 2]"
 		  SFunctionDeploymentMode off
@@ -3098,9 +3098,9 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "667::21"
+		  SID			  "667::25"
 		  Position		  [460, 241, 480, 259]
-		  ZOrder		  12
+		  ZOrder		  16
 		}
 		Block {
 		  BlockType		  Outport
@@ -3111,14 +3111,15 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  1
+		  ZOrder		  6
 		  SrcBlock		  "measured"
 		  SrcPort		  1
+		  Points		  [120, 0]
 		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  2
+		  ZOrder		  7
 		  SrcBlock		  "desired"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
@@ -3126,7 +3127,7 @@ Model {
 		}
 		Line {
 		  Name			  "u"
-		  ZOrder		  3
+		  ZOrder		  8
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -3134,14 +3135,14 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  4
+		  ZOrder		  9
 		  SrcBlock		  " Demux "
 		  SrcPort		  1
 		  DstBlock		  " Terminator "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  5
+		  ZOrder		  10
 		  SrcBlock		  " SFunction "
 		  SrcPort		  1
 		  DstBlock		  " Demux "
@@ -3276,6 +3277,7 @@ Model {
 	      "ation('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools',"
 	      "'Measurements',true,'Version','2018a')),'Version','2018a','Location',[135 169 1415 860])"
 	      NumInputPorts	      "5"
+	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3386,6 +3388,7 @@ Model {
 	      "ation('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools',"
 	      "'Measurements',true,'Version','2018a')),'Version','2018a','Location',[135 169 1425 890])"
 	      NumInputPorts	      "5"
+	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3399,103 +3402,78 @@ Model {
 	      "]),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggi"
 	      "ng',true,'DataLoggingVariableName','tauError_DATA','DataLoggingSaveFormat','StructureWithTime','DataLoggingDeci"
 	      "mation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDispla"
-	      "ys',{struct('MinYLimReal','-2.62369','MaxYLimReal','22.48453','YLabelReal','','MinYLimMag','0.00000','MaxYLimMa"
-	      "g','22.48453','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesT"
-	      "ickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509"
-	      "8039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450"
-	      "98039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863"
-	      "],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Mark"
-	      "er','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0"
-	      "],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineW"
-	      "idth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none"
-	      "','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placemen"
-	      "t',1),struct('MinYLimReal','-1.31451','MaxYLimReal','0.36849','YLabelReal','','MinYLimMag','0','MaxYLimMag','10"
-	      "','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0"
-	      ".686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0"
-	      ".623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;"
-	      "0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%"
-	      "<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('C"
-	      "olor',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle"
-	      "','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'M"
-	      "arker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible',"
-	      "'on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',2),struct"
-	      "('MinYLimReal','-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVis"
-	      "ibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450980"
-	      "3922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176"
-	      "4706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176470588"
-	      "23529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel"
-	      ">','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1"
-	      "],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineW"
-	      "idth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none"
-	      "','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'Use"
-	      "rDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',3),struct('MinYLimRea"
-	      "l','-80.67711','MaxYLimReal','54.64406','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','"
-	      "on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686"
-	      "274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0"
-	      ".411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27"
-	      "4509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePr"
-	      "opertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct("
-	      "'Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineSty"
-	      "le','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,"
-	      "'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible"
-	      "','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedCh"
-	      "annelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',4),struct('MinYLimReal','-80.58"
-	      "848','MaxYLimReal','54.86216','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid"
-	      "',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.6862745098039"
-	      "22 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705"
-	      "882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921"
-	      "569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCa"
-	      "che',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1"
-	      " 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','L"
-	      "ineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','"
-	      "none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),st"
-	      "ruct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames"
-	      "',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',5)},'DisplayPropertyDefaults',struct('YLa"
-	      "belReal','','AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorO"
-	      "rder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392"
-	      "156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;"
-	      "1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0]"
-	      ",'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWi"
-	      "dth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none'"
-	      ",'Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct("
-	      "'Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineSty"
-	      "le','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineName"
-	      "s',{{[]}},'ShowContent',true,'Placement',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimens"
-	      "ions',[5 1],'DisplayContentCache',{struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 "
-	      "0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','Line"
-	      "Width',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','non"
-	      "e','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struc"
-	      "t('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineS"
-	      "tyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false"
-	      "),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0."
-	      "5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visib"
-	      "le','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color'"
-	      ",[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-'"
-	      ",'LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker"
-	      "','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>'"
-	      ",'LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')"
-	      ",struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],"
-	      "'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWid"
-	      "th',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none',"
-	      "'Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserD"
-	      "efinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('"
-	      "Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyl"
-	      "e','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'"
-	      "Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible'"
-	      ",'on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0"
-	      " 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMag"
-	      "Phase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','L"
-	      "ineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','"
-	      "none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),st"
-	      "ruct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'Li"
-	      "neStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth'"
-	      ",0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false)}),extmgr.Configurat"
-	      "ion('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','M"
-	      "easurements',true,'Version','2018a')),'Version','2018a','Location',[387 216 1667 907])"
+	      "ys',{struct('MinYLimReal','-0.57029','MaxYLimReal','6.31172','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag"
+	      "','6.31172','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTic"
+	      "kColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450980"
+	      "39215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098"
+	      "039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],"
+	      "'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker"
+	      "','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')"
+	      ",struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],"
+	      "'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWid"
+	      "th',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none',"
+	      "'Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'torso:1','torso:2','torso:3'}},'Sh"
+	      "owContent',true,'Placement',1),struct('MinYLimReal','-0.67831','MaxYLimReal','0.54127','YLabelReal','','MinYLim"
+	      "Mag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',["
+	      "0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666666"
+	      "6667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313725490"
+	      "19608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65"
+	      "0980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWid"
+	      "th',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none',"
+	      "'Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('"
+	      "Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyl"
+	      "e','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'"
+	      "Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',4,'LineNames',{{'left_arm:1','left_a"
+	      "rm:2','left_arm:3','left_arm:4'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-0.83754','MaxYLimRea"
+	      "l','0.42931','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',tr"
+	      "ue,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803"
+	      "922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431"
+	      "372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.058823529"
+	      "4117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Co"
+	      "lor',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle'"
+	      ",'-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Ma"
+	      "rker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','"
+	      "on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0"
+	      " 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines'"
+	      ",4,'LineNames',{{'right_arm:1','right_arm:2','right_arm:3','right_arm:4'}},'ShowContent',true,'Placement',3),st"
+	      "ruct('MinYLimReal','-12.86661','MaxYLimReal','5.95373','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','Lege"
+	      "ndVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274"
+	      "509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529"
+	      "411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.71764"
+	      "7058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Signal"
+	      "Label>','LinePropertiesCache',{{struct('Visible','off','Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker'"
+	      ",'none'),struct('Visible','off','Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none'),struct('Visibl"
+	      "e','off','Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none'),struct('Visible','on','Color',[1 0 0]"
+	      ",'LineStyle','-','LineWidth',0.5,'Marker','none'),struct('Visible','off','Color',[0 1 0],'LineStyle','-','LineW"
+	      "idth',0.5,'Marker','none'),struct('Visible','off','Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','non"
+	      "e')}},'UserDefinedChannelNames',{{}},'NumLines',6,'LineNames',{{'left_leg:1','left_leg:2','left_leg:3','left_le"
+	      "g:4','left_leg:5','left_leg:6'}},'ShowContent',true,'Placement',4),struct('MinYLimReal','-0.27144','MaxYLimReal"
+	      "','0.92805','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',tru"
+	      "e,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.6862745098039"
+	      "22],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160784313"
+	      "72549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294"
+	      "117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Col"
+	      "or',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle',"
+	      "'-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Mar"
+	      "ker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','o"
+	      "n'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 "
+	      "1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',"
+	      "6,'LineNames',{{'right_leg:1','right_leg:2','right_leg:3','right_leg:4','right_leg:5','right_leg:6'}},'ShowCont"
+	      "ent',true,'Placement',5)},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 0],'AxesTickColor',"
+	      "[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686"
+	      " 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509803921568"
+	      "6;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title',"
+	      "'%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none'"
+	      ",'Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct("
+	      "'Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineSty"
+	      "le','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,"
+	      "'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible"
+	      "','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1),'Tim"
+	      "eRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[5 1],'DisplayContentCache',[]),extmgr.Con"
+	      "figuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('To"
+	      "ols','Measurements',true,'Version','2018a')),'Version','2018a','Location',[68 109 995 1079])"
 	      NumInputPorts	      "5"
+	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3509,88 +3487,62 @@ Model {
 	      "]),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggi"
 	      "ng',true,'DataLoggingVariableName','ScopeData2','DataLoggingSaveFormat','StructureWithTime','DataLoggingDecimat"
 	      "ion','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays'"
-	      ",{struct('MinYLimReal','-2.62369','MaxYLimReal','22.48453','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag',"
-	      "'22.48453','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTick"
-	      "Color',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803"
-	      "9215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980"
-	      "39215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'"
-	      "Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker'"
-	      ",'none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),"
-	      "struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'"
-	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',"
-	      "1),struct('MinYLimReal','-1.31451','MaxYLimReal','0.36849','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','"
-	      "LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68"
-	      "6274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62"
-	      "3529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7"
-	      "17647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Si"
-	      "gnalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
-	      "ible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Colo"
-	      "r',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','"
-	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Mark"
-	      "er','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',2),struct('M"
-	      "inYLimReal','-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibi"
-	      "lity','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450980392"
-	      "2 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176470"
-	      "6 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176470588235"
-	      "29 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>',"
-	      "'LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),"
-	      "struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'"
-	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDe"
-	      "finedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',3),struct('MinYLimReal',"
-	      "'-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','"
-	      "XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627450"
-	      "9803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.4117"
-	      "64705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745098"
-	      "03921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropert"
-	      "iesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',4)"
-	      "},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686"
-	      "274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0"
-	      ".411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27"
-	      "4509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePr"
-	      "opertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct("
-	      "'Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineSty"
-	      "le','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,"
-	      "'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible"
-	      "','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedCh"
-	      "annelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1),'TimeRangeSamples','14','Tim"
-	      "eRangeFrames','14','DisplayLayoutDimensions',[4 1],'DisplayContentCache',{struct('Title','%<SignalLabel>','Line"
-	      "PropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struc"
-	      "t('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineS"
-	      "tyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0."
-	      "5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visib"
-	      "le','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefined"
-	      "ChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color'"
-	      ",[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-'"
-	      ",'LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker"
-	      "','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')"
-	      ",struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],"
-	      "'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase'"
-	      ",false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWid"
-	      "th',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none',"
-	      "'Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('"
-	      "Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyl"
-	      "e','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'"
-	      "Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalL"
-	      "abel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible'"
-	      ",'on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0"
-	      " 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','L"
-	      "ineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','"
-	      "none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},"
-	      "'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{st"
-	      "ruct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'Li"
-	      "neStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth'"
-	      ",0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vi"
-	      "sible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Col"
-	      "or',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'P"
-	      "lotMagPhase',false)}),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale"
-	      "','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Location',[135 "
-	      "169 1425 890],'VisibleAtModelOpen','on')"
+	      ",{struct('MinYLimReal','-6.53608','MaxYLimReal','0.6462','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','6"
+	      ".53608','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCol"
+	      "or',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803921"
+	      "5686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980392"
+	      "15686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Tit"
+	      "le','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','n"
+	      "one','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),str"
+	      "uct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'Lin"
+	      "eStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',"
+	      "0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
+	      "ible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux5/1:1','Demux5/1:2'}},'ShowConten"
+	      "t',true,'Placement',1),struct('MinYLimReal','-1.45508','MaxYLimReal','5.37359','YLabelReal','','MinYLimMag','0'"
+	      ",'MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'"
+	      "AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0"
+	      "745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0."
+	      "0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803921"
+	      "56863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,"
+	      "'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible"
+	      "','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',["
+	      "1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','"
+	      "LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker',"
+	      "'none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux5/2:1','Demux5/2:2'}},"
+	      "'ShowContent',true,'Placement',2),struct('MinYLimReal','-4.83125','MaxYLimReal','3.99445','YLabelReal','','MinY"
+	      "LimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor"
+	      "',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666"
+	      "6666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313725"
+	      "49019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0"
+	      ".650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','Line"
+	      "Width',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','non"
+	      "e','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struc"
+	      "t('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineS"
+	      "tyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0."
+	      "5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux5/3:1','Dem"
+	      "ux5/3:2'}},'ShowContent',true,'Placement',3),struct('MinYLimReal','-1.54903','MaxYLimReal','3.61968','YLabelRea"
+	      "l','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false"
+	      ",'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 "
+	      "0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.39215686274509"
+	      "8 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098"
+	      "039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle"
+	      "','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'M"
+	      "arker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux5/4:1','Demux5/"
+	      "4:2'}},'ShowContent',true,'Placement',4)},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 0],"
+	      "'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0."
+	      "0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0"
+	      ".0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392"
+	      "156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5"
+	      ",'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
+	      "e','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',"
+	      "[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-',"
+	      "'LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker'"
+	      ",'none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Pl"
+	      "acement',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[4 1],'DisplayContentCache"
+	      "',[]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.C"
+	      "onfiguration('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Location',[135 169 1425 890])"
 	      NumInputPorts	      "4"
+	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3604,207 +3556,78 @@ Model {
 	      "]),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggi"
 	      "ng',true,'DataLoggingVariableName','ScopeData4','DataLoggingSaveFormat','StructureWithTime','DataLoggingDecimat"
 	      "ion','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays'"
-	      ",{struct('MinYLimReal','-2.62369','MaxYLimReal','22.48453','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag',"
-	      "'22.48453','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTick"
-	      "Color',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803"
-	      "9215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980"
-	      "39215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'"
-	      "Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker'"
-	      ",'none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),"
-	      "struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'"
-	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',"
-	      "1),struct('MinYLimReal','-1.31451','MaxYLimReal','0.36849','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','"
-	      "LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68"
-	      "6274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62"
-	      "3529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7"
-	      "17647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Si"
-	      "gnalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
-	      "ible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Colo"
-	      "r',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','"
-	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Mark"
-	      "er','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',2),struct('M"
-	      "inYLimReal','-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibi"
-	      "lity','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450980392"
-	      "2 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176470"
-	      "6 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176470588235"
-	      "29 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>',"
-	      "'LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),"
-	      "struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'"
-	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDe"
-	      "finedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',3),struct('MinYLimReal',"
-	      "'-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','"
-	      "XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627450"
-	      "9803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.4117"
-	      "64705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745098"
-	      "03921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropert"
-	      "iesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',4)"
-	      ",struct('MinYLimReal','-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','Le"
-	      "gendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862"
-	      "74509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235"
-	      "29411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717"
-	      "647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Sign"
-	      "alLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowConten"
-	      "t',true,'Placement',5),struct('MinYLimReal','-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0'"
-	      ",'MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'"
-	      "AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0"
-	      "745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0."
-	      "0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803921"
-	      "56863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNam"
-	      "es',{{[]}},'ShowContent',true,'Placement',6)},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0"
-	      " 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666666666"
-	      "7;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313725490196"
-	      "08 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098"
-	      "0392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth'"
-	      ",0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Vi"
-	      "sible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Col"
-	      "or',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle',"
-	      "'-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Mar"
-	      "ker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true"
-	      ",'Placement',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[6 1],'DisplayContentC"
-	      "ache',{struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('C"
-	      "olor',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle"
-	      "','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'M"
-	      "arker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLa"
-	      "bel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible',"
-	      "'on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 "
-	      "1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','Li"
-	      "neWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','n"
-	      "one','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'"
-	      "UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{str"
-	      "uct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'Lin"
-	      "eStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',"
-	      "0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
-	      "ible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Colo"
-	      "r',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'Pl"
-	      "otMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','"
+	      ",{struct('MinYLimReal','-2.48855','MaxYLimReal','6.30034','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','"
+	      "6.30034','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCo"
+	      "lor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450980392"
+	      "15686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039"
+	      "215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Ti"
+	      "tle','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','"
+	      "none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),st"
+	      "ruct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'Li"
+	      "neStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth'"
+	      ",0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Vi"
+	      "sible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux7/1:1','Demux7/1:2'}},'ShowConte"
+	      "nt',true,'Placement',1),struct('MinYLimReal','-2.67622','MaxYLimReal','4.39148','YLabelReal','','MinYLimMag','0"
+	      "','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],"
+	      "'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0."
+	      "0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0"
+	      ".0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392"
+	      "156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5"
+	      ",'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
+	      "e','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',"
+	      "[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-',"
+	      "'LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker'"
+	      ",'none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux7/2:1','Demux7/2:2'}}"
+	      ",'ShowContent',true,'Placement',2),struct('MinYLimReal','-3.98719','MaxYLimReal','3.95911','YLabelReal','','Min"
+	      "YLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColo"
+	      "r',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666"
+	      "66666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372"
+	      "549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 "
+	      "0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','Lin"
+	      "eWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','no"
+	      "ne','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),stru"
+	      "ct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'Line"
+	      "Style','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0"
+	      ".5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux7/3:1','De"
+	      "mux7/3:2'}},'ShowContent',true,'Placement',3),struct('MinYLimReal','-4.18034','MaxYLimReal','3.17825','YLabelRe"
+	      "al','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',fals"
+	      "e,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1"
+	      " 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.3921568627450"
+	      "98 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074509"
+	      "8039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','on','Color',[1"
+	      " 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none'),struct('Visible','on','Color',[1 0 1],'LineStyle','-','L"
+	      "ineWidth',0.5,'Marker','none')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux7/4:1','Demux7"
+	      "/4:2'}},'ShowContent',true,'Placement',4),struct('MinYLimReal','-5.55141','MaxYLimReal','8.94129','YLabelReal',"
+	      "'','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'A"
+	      "xesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0"
+	      "666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0"
+	      ".831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039"
+	      "215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','"
 	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Mark"
-	      "er','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0"
-	      "],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineW"
-	      "idth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title'"
-	      ",'%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none"
-	      "','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct"
-	      "('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineSt"
-	      "yle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5"
-	      ",'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
-	      "e','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false)}),extmgr.Configuration('Tools','Plot Navigation"
-	      "',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version',"
-	      "'2017b')),'Version','2017b','Location',[135 169 1425 890],'VisibleAtModelOpen','on')"
+	      "er','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux7/5:1','Demux7/5:2"
+	      "'}},'ShowContent',true,'Placement',5),struct('MinYLimReal','-4.14324','MaxYLimReal','4.42572','YLabelReal','','"
+	      "MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesC"
+	      "olor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666"
+	      "66666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831"
+	      "372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
+	      "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','on','Color',[0 1 1],'L"
+	      "ineStyle','-','LineWidth',0.5,'Marker','none'),struct('Visible','on','Color',[1 0 0],'LineStyle','-','LineWidth"
+	      "',0.5,'Marker','none')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux7/6:1','Demux7/6:2'}},"
+	      "'ShowContent',true,'Placement',6)},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 0],'AxesTi"
+	      "ckColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098"
+	      "039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509"
+	      "8039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]"
+	      ",'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marke"
+	      "r','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'"
+	      "),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0]"
+	      ",'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWi"
+	      "dth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none'"
+	      ",'Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement"
+	      "',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[6 1],'DisplayContentCache',[]),e"
+	      "xtmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configur"
+	      "ation('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Location',[68 109 1921 1079])"
 	      NumInputPorts	      "6"
-	    }
-	    Block {
-	      BlockType		      Scope
-	      Name		      "tauLeftLeg1"
-	      SID		      "676"
-	      Ports		      [6]
-	      Position		      [1845, 602, 1930, 683]
-	      ZOrder		      691
-	      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(ext"
-	      "mgr.Configuration('Core','General UI',true,'FigureColor',[0.156862745098039 0.156862745098039 0.156862745098039"
-	      "]),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggi"
-	      "ng',true,'DataLoggingVariableName','ScopeData5','DataLoggingSaveFormat','StructureWithTime','DataLoggingDecimat"
-	      "ion','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays'"
-	      ",{struct('MinYLimReal','-2.62369','MaxYLimReal','22.48453','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag',"
-	      "'22.48453','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTick"
-	      "Color',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803"
-	      "9215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980"
-	      "39215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'"
-	      "Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker'"
-	      ",'none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),"
-	      "struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'"
-	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',"
-	      "1),struct('MinYLimReal','-1.31451','MaxYLimReal','0.36849','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','"
-	      "LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68"
-	      "6274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62"
-	      "3529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7"
-	      "17647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Si"
-	      "gnalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
-	      "ible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Colo"
-	      "r',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','"
-	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Mark"
-	      "er','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',2),struct('M"
-	      "inYLimReal','-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibi"
-	      "lity','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450980392"
-	      "2 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176470"
-	      "6 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176470588235"
-	      "29 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>',"
-	      "'LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),"
-	      "struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'"
-	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDe"
-	      "finedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',3),struct('MinYLimReal',"
-	      "'-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','"
-	      "XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627450"
-	      "9803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.4117"
-	      "64705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745098"
-	      "03921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropert"
-	      "iesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',4)"
-	      ",struct('MinYLimReal','-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','Le"
-	      "gendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862"
-	      "74509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235"
-	      "29411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717"
-	      "647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Sign"
-	      "alLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowConten"
-	      "t',true,'Placement',5),struct('MinYLimReal','-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0'"
-	      ",'MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'"
-	      "AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0"
-	      "745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0."
-	      "0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803921"
-	      "56863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNam"
-	      "es',{{[]}},'ShowContent',true,'Placement',6)},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0"
-	      " 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666666666"
-	      "7;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313725490196"
-	      "08 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098"
-	      "0392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth'"
-	      ",0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Vi"
-	      "sible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Col"
-	      "or',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle',"
-	      "'-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Mar"
-	      "ker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true"
-	      ",'Placement',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[6 1],'DisplayContentC"
-	      "ache',{struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('C"
-	      "olor',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle"
-	      "','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'M"
-	      "arker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLa"
-	      "bel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible',"
-	      "'on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 "
-	      "1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','Li"
-	      "neWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','n"
-	      "one','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'"
-	      "UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{str"
-	      "uct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'Lin"
-	      "eStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',"
-	      "0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
-	      "ible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Colo"
-	      "r',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'Pl"
-	      "otMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','"
-	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Mark"
-	      "er','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0"
-	      "],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineW"
-	      "idth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title'"
-	      ",'%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none"
-	      "','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct"
-	      "('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineSt"
-	      "yle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5"
-	      ",'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
-	      "e','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false)}),extmgr.Configuration('Tools','Plot Navigation"
-	      "',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version',"
-	      "'2017b')),'Version','2017b','Location',[135 169 1425 890],'VisibleAtModelOpen','on')"
-	      NumInputPorts	      "6"
+	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3915,6 +3738,7 @@ Model {
 	      "ration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools'"
 	      ",'Measurements',true,'Version','2018a')),'Version','2018a','Location',[135 175 1445 880])"
 	      NumInputPorts	      "5"
+	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3938,78 +3762,138 @@ Model {
 	      "struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'"
 	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidt"
 	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',"
-	      "1),struct('MinYLimReal','-1.31451','MaxYLimReal','0.36849','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','"
-	      "LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68"
-	      "6274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62"
-	      "3529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7"
-	      "17647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Si"
-	      "gnalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
-	      "ible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Colo"
-	      "r',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','"
-	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Mark"
-	      "er','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',2),struct('M"
-	      "inYLimReal','-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibi"
-	      "lity','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450980392"
-	      "2 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176470"
-	      "6 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176470588235"
-	      "29 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>',"
-	      "'LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),"
-	      "struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'"
-	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDe"
-	      "finedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',3),struct('MinYLimReal',"
-	      "'-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','"
-	      "XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627450"
-	      "9803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.4117"
-	      "64705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745098"
-	      "03921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropert"
-	      "iesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',4)"
-	      "},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686"
-	      "274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0"
-	      ".411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27"
-	      "4509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePr"
-	      "opertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct("
-	      "'Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineSty"
-	      "le','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,"
-	      "'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible"
-	      "','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedCh"
-	      "annelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1),'TimeRangeSamples','14','Tim"
-	      "eRangeFrames','14','DisplayLayoutDimensions',[4 1],'DisplayContentCache',{struct('Title','%<SignalLabel>','Line"
-	      "PropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struc"
-	      "t('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineS"
-	      "tyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0."
-	      "5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visib"
-	      "le','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefined"
-	      "ChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color'"
-	      ",[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-'"
-	      ",'LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker"
-	      "','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')"
-	      ",struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],"
-	      "'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase'"
-	      ",false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWid"
-	      "th',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none',"
-	      "'Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('"
-	      "Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyl"
-	      "e','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'"
-	      "Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalL"
-	      "abel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible'"
-	      ",'on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0"
-	      " 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','L"
-	      "ineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','"
-	      "none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},"
-	      "'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{st"
-	      "ruct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'Li"
-	      "neStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth'"
-	      ",0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vi"
-	      "sible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Col"
-	      "or',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'P"
-	      "lotMagPhase',false)}),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale"
-	      "','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Location',[135 "
-	      "169 1425 890],'VisibleAtModelOpen','on')"
+	      "Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux6/1:1','Demux6/1:2'}},'ShowCon"
+	      "tent',true,'Placement',1),struct('MinYLimReal','-1.31451','MaxYLimReal','0.36849','YLabelReal','','MinYLimMag',"
+	      "'0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0"
+	      "],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;"
+	      "0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608"
+	      " 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803"
+	      "92156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0"
+	      ".5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visi"
+	      "ble','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color"
+	      "',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-"
+	      "','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marke"
+	      "r','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux6/2:1','Demux6/2:2'"
+	      "}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-1.35483','MaxYLimReal','0.37657','YLabelReal','','M"
+	      "inYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesCo"
+	      "lor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666"
+	      "6666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313"
+	      "72549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074509803921568"
+	      "6 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','L"
+	      "ineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','"
+	      "none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),st"
+	      "ruct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'Li"
+	      "neStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth'"
+	      ",0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux6/3:1','"
+	      "Demux6/3:2'}},'ShowContent',true,'Placement',3),struct('MinYLimReal','-1.35483','MaxYLimReal','0.37657','YLabel"
+	      "Real','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',fa"
+	      "lse,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1"
+	      " 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.39215686274"
+	      "5098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745"
+	      "098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineSt"
+	      "yle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5"
+	      ",'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux6/4:1','Demu"
+	      "x6/4:2'}},'ShowContent',true,'Placement',4)},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 "
+	      "0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667"
+	      ";0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83137254901960"
+	      "8 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980"
+	      "392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',"
+	      "0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
+	      "ible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Colo"
+	      "r',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','"
+	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Mark"
+	      "er','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,"
+	      "'Placement',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[4 1],'DisplayContentCa"
+	      "che',[]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmg"
+	      "r.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Location',[130 174 1430 895]"
+	      ")"
 	      NumInputPorts	      "4"
+	      Floating		      off
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "tauRightLeg"
+	      SID		      "676"
+	      Ports		      [6]
+	      Position		      [1845, 602, 1930, 683]
+	      ZOrder		      691
+	      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(ext"
+	      "mgr.Configuration('Core','General UI',true,'FigureColor',[0.156862745098039 0.156862745098039 0.156862745098039"
+	      "]),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggi"
+	      "ng',true,'DataLoggingVariableName','ScopeData5','DataLoggingSaveFormat','StructureWithTime','DataLoggingDecimat"
+	      "ion','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays'"
+	      ",{struct('MinYLimReal','-2.10058','MaxYLimReal','8.54167','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','"
+	      "8.54167','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCo"
+	      "lor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450980392"
+	      "15686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039"
+	      "215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Ti"
+	      "tle','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','"
+	      "none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),st"
+	      "ruct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'Li"
+	      "neStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth'"
+	      ",0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Vi"
+	      "sible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux8/1:1','Demux8/1:2'}},'ShowConte"
+	      "nt',true,'Placement',1),struct('MinYLimReal','-0.99963','MaxYLimReal','6.35673','YLabelReal','','MinYLimMag','0"
+	      "','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],"
+	      "'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0."
+	      "0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0"
+	      ".0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392"
+	      "156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5"
+	      ",'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
+	      "e','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',"
+	      "[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-',"
+	      "'LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker'"
+	      ",'none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux8/2:1','Demux8/2:2'}}"
+	      ",'ShowContent',true,'Placement',2),struct('MinYLimReal','-5.12475','MaxYLimReal','4.83627','YLabelReal','','Min"
+	      "YLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColo"
+	      "r',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666"
+	      "66666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372"
+	      "549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 "
+	      "0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','Lin"
+	      "eWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','no"
+	      "ne','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),stru"
+	      "ct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'Line"
+	      "Style','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0"
+	      ".5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux8/3:1','De"
+	      "mux8/3:2'}},'ShowContent',true,'Placement',3),struct('MinYLimReal','-7.50892','MaxYLimReal','6.49996','YLabelRe"
+	      "al','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',fals"
+	      "e,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1"
+	      " 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.3921568627450"
+	      "98 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074509"
+	      "8039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyl"
+	      "e','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'"
+	      "Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux8/4:1','Demux8"
+	      "/4:2'}},'ShowContent',true,'Placement',4),struct('MinYLimReal','-5.97821','MaxYLimReal','5.13724','YLabelReal',"
+	      "'','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'A"
+	      "xesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0"
+	      "666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0"
+	      ".831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039"
+	      "215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','"
+	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Mark"
+	      "er','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux8/5:1','Demux8/5:2"
+	      "'}},'ShowContent',true,'Placement',5),struct('MinYLimReal','-6.71465','MaxYLimReal','4.22938','YLabelReal','','"
+	      "MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesC"
+	      "olor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666"
+	      "66666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831"
+	      "372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
+	      "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[0 1 1],'LineStyle','-','"
+	      "LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker',"
+	      "'none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux8/6:1','Demux8/6:2'}},"
+	      "'ShowContent',true,'Placement',6)},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 0],'AxesTi"
+	      "ckColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098"
+	      "039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509"
+	      "8039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]"
+	      ",'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marke"
+	      "r','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'"
+	      "),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0]"
+	      ",'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWi"
+	      "dth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none'"
+	      ",'Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement"
+	      "',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[6 1],'DisplayContentCache',[]),e"
+	      "xtmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configur"
+	      "ation('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Location',[68 109 1921 1079])"
+	      NumInputPorts	      "6"
+	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -4023,81 +3907,54 @@ Model {
 	      "]),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggi"
 	      "ng',true,'DataLoggingVariableName','ScopeData1','DataLoggingSaveFormat','StructureWithTime','DataLoggingDecimat"
 	      "ion','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays'"
-	      ",{struct('MinYLimReal','-2.62369','MaxYLimReal','22.48453','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag',"
-	      "'22.48453','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTick"
-	      "Color',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803"
-	      "9215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980"
-	      "39215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'"
-	      "Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker'"
-	      ",'none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),"
-	      "struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'"
-	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',"
-	      "1),struct('MinYLimReal','-1.31451','MaxYLimReal','0.36849','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','"
-	      "LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68"
-	      "6274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62"
-	      "3529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7"
-	      "17647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Si"
-	      "gnalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
-	      "ible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Colo"
-	      "r',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','"
-	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Mark"
-	      "er','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',2),struct('M"
-	      "inYLimReal','-1.35483','MaxYLimReal','0.37657','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibi"
-	      "lity','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450980392"
-	      "2 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176470"
-	      "6 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176470588235"
-	      "29 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>',"
-	      "'LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),"
-	      "struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'"
-	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDe"
-	      "finedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',3)},'DisplayPropertyDefa"
-	      "ults',struct('YLabelReal','','AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.6862745"
-	      "09803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160"
-	      "78431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588"
-	      "235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struc"
-	      "t('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineS"
-	      "tyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0."
-	      "5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visib"
-	      "le','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color'"
-	      ",[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumL"
-	      "ines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1),'TimeRangeSamples','14','TimeRangeFrames','14','Di"
-	      "splayLayoutDimensions',[3 1],'DisplayContentCache',{struct('Title','%<SignalLabel>','LinePropertiesCache',{{str"
-	      "uct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'Lin"
-	      "eStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',"
-	      "0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Vis"
-	      "ible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Colo"
-	      "r',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'Pl"
-	      "otMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','"
-	      "-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Mark"
-	      "er','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on"
-	      "'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0"
-	      "],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineW"
-	      "idth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title'"
-	      ",'%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none"
-	      "','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct"
-	      "('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineSt"
-	      "yle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5"
-	      ",'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
-	      "e','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LineProperties"
-	      "Cache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',"
-	      "[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-',"
-	      "'LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker'"
-	      ",'none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),"
-	      "struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNam"
-	      "es',{{}},'PlotMagPhase',false),struct('Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'"
-	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidt"
-	      "h',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','"
-	      "Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('C"
-	      "olor',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle"
-	      "','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'PlotMagPhase',false)}),"
-	      "extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configu"
-	      "ration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Location',[135 169 1425 890])"
+	      ",{struct('MinYLimReal','-3.43295','MaxYLimReal','1.19324','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','"
+	      "3.43295','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCo"
+	      "lor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450980392"
+	      "15686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039"
+	      "215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Ti"
+	      "tle','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','"
+	      "none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),st"
+	      "ruct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'Li"
+	      "neStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth'"
+	      ",0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Vi"
+	      "sible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux/1:1','Demux/1:2'}},'ShowContent"
+	      "',true,'Placement',1),struct('MinYLimReal','-1.19604','MaxYLimReal','3.79375','YLabelReal','','MinYLimMag','0',"
+	      "'MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'A"
+	      "xesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07"
+	      "45098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0"
+	      "745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098039215"
+	      "6863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'"
+	      "Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible'"
+	      ",'on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1"
+	      " 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','L"
+	      "ineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','"
+	      "none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux/2:1','Demux/2:2'}},'Sh"
+	      "owContent',true,'Placement',2),struct('MinYLimReal','-3.66797','MaxYLimReal','3.66662','YLabelReal','','MinYLim"
+	      "Mag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',["
+	      "0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666666"
+	      "6667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313725490"
+	      "19608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65"
+	      "0980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWid"
+	      "th',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none',"
+	      "'Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('"
+	      "Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyl"
+	      "e','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'"
+	      "Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Demux/3:1','Demux/3"
+	      ":2'}},'ShowContent',true,'Placement',3)},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 0],'"
+	      "AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0"
+	      "745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0."
+	      "0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803921"
+	      "56863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,"
+	      "'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible"
+	      "','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',["
+	      "1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','"
+	      "LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker',"
+	      "'none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Pla"
+	      "cement',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[3 1],'DisplayContentCache'"
+	      ",[]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Co"
+	      "nfiguration('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Location',[135 169 1425 890])"
 	      NumInputPorts	      "3"
+	      Floating		      off
 	    }
 	    Line {
 	      ZOrder		      1
@@ -4546,7 +4403,9 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "leftLeg"
 	      ZOrder		      84
+	      Labels		      [1, 1]
 	      SrcBlock		      "MATLAB Function3"
 	      SrcPort		      1
 	      DstBlock		      "Demux7"
@@ -4605,7 +4464,7 @@ Model {
 	      SrcBlock		      "Demux8"
 	      SrcPort		      6
 	      Points		      [21, 0; 0, 30]
-	      DstBlock		      "tauLeftLeg1"
+	      DstBlock		      "tauRightLeg"
 	      DstPort		      6
 	    }
 	    Line {
@@ -4613,7 +4472,7 @@ Model {
 	      SrcBlock		      "Demux8"
 	      SrcPort		      5
 	      Points		      [47, 0; 0, 25]
-	      DstBlock		      "tauLeftLeg1"
+	      DstBlock		      "tauRightLeg"
 	      DstPort		      5
 	    }
 	    Line {
@@ -4621,7 +4480,7 @@ Model {
 	      SrcBlock		      "Demux8"
 	      SrcPort		      4
 	      Points		      [80, 0; 0, 20]
-	      DstBlock		      "tauLeftLeg1"
+	      DstBlock		      "tauRightLeg"
 	      DstPort		      4
 	    }
 	    Line {
@@ -4629,7 +4488,7 @@ Model {
 	      SrcBlock		      "Demux8"
 	      SrcPort		      3
 	      Points		      [14, 0; 0, 15]
-	      DstBlock		      "tauLeftLeg1"
+	      DstBlock		      "tauRightLeg"
 	      DstPort		      3
 	    }
 	    Line {
@@ -4637,7 +4496,7 @@ Model {
 	      SrcBlock		      "Demux8"
 	      SrcPort		      2
 	      Points		      [33, 0; 0, 10]
-	      DstBlock		      "tauLeftLeg1"
+	      DstBlock		      "tauRightLeg"
 	      DstPort		      2
 	    }
 	    Line {
@@ -4645,11 +4504,13 @@ Model {
 	      SrcBlock		      "Demux8"
 	      SrcPort		      1
 	      Points		      [70, 0; 0, 5]
-	      DstBlock		      "tauLeftLeg1"
+	      DstBlock		      "tauRightLeg"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "rightLeg"
 	      ZOrder		      98
+	      Labels		      [1, 1]
 	      SrcBlock		      "MATLAB Function4"
 	      SrcPort		      1
 	      Points		      [75, 0; 0, 5]
@@ -4787,12 +4648,13 @@ Model {
       Position		      [425, 205, 530, 320]
       ZOrder		      662
       RequestExecContextInheritance off
-      Variant		      off
       System {
 	Name			"PD + GRAVITY CONTROL"
-	Location		[134, 55, 3840, 2160]
+	Location		[67, 27, 1920, 1080]
 	Open			off
 	PortBlocksUseCompactNotation off
+	SetDomainSpec		off
+	DomainSpecType		"Deduce"
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4803,7 +4665,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"584"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  Inport
 	  Name			  "jointVel"
@@ -4847,7 +4709,6 @@ Model {
 	  Position		  [245, 135, 400, 195]
 	  ZOrder		  -36
 	  RequestExecContextInheritance	off
-	  Variant		  off
 	  Port {
 	    PortNumber		    1
 	    Name		    "gravityTorques"
@@ -4857,6 +4718,8 @@ Model {
 	    Location		    [134, 55, 3840, 2160]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -4963,16 +4826,17 @@ Model {
 	  Position		  [245, 41, 405, 99]
 	  ZOrder		  -41
 	  RequestExecContextInheritance	off
-	  Variant		  off
 	  Port {
 	    PortNumber		    1
 	    Name		    "PD control"
 	  }
 	  System {
 	    Name		    "PD Feedback Controller"
-	    Location		    [134, 55, 3840, 2160]
-	    Open		    off
+	    Location		    [67, 27, 1920, 1080]
+	    Open		    on
 	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -4983,7 +4847,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "606"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "jointVel"
@@ -5009,12 +4873,13 @@ Model {
 	      Position		      [415, -92, 550, 182]
 	      ZOrder		      637
 	      RequestExecContextInheritance off
-	      Variant		      off
 	      System {
 		Name			"PD Controller"
-		Location		[134, 55, 3840, 2160]
+		Location		[67, 27, 1920, 1080]
 		Open			off
 		PortBlocksUseCompactNotation off
+		SetDomainSpec		off
+		DomainSpecType		"Deduce"
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -5025,7 +4890,7 @@ Model {
 		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 		TiledPageScale		1
 		ShowPageBoundaries	off
-		ZoomFactor		"663"
+		ZoomFactor		"250"
 		Block {
 		  BlockType		  Inport
 		  Name			  "Ms*jointAcc_des"
@@ -5242,12 +5107,13 @@ Model {
 	      ZOrder		      638
 	      HideAutomaticName	      off
 	      RequestExecContextInheritance off
-	      Variant		      off
 	      System {
 		Name			"Reference Generator"
 		Location		[134, 55, 3840, 2160]
 		Open			off
 		PortBlocksUseCompactNotation off
+		SetDomainSpec		off
+		DomainSpecType		"Deduce"
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -5311,12 +5177,13 @@ Model {
 		  Position		  [110, -376, 220, -289]
 		  ZOrder		  680
 		  RequestExecContextInheritance	off
-		  Variant		  off
 		  System {
 		    Name		    "Get Ms*jointAcc_des"
 		    Location		    [134, 55, 3840, 2160]
 		    Open		    off
 		    PortBlocksUseCompactNotation off
+		    SetDomainSpec	    off
+		    DomainSpecType	    "Deduce"
 		    ModelBrowserVisibility  off
 		    ModelBrowserWidth	    200
 		    ScreenColor		    "white"
@@ -5829,11 +5696,11 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "SetReferences"
-      SID		      "137"
+      Name		      "SetReferences1"
+      SID		      "677"
       Ports		      [1]
-      Position		      [565, 250, 620, 280]
-      ZOrder		      383
+      Position		      [570, 250, 625, 280]
+      ZOrder		      967
       BackgroundColor	      "[0.827500, 0.576500, 0.603900]"
       ShowName		      off
       LibraryVersion	      "1.675"
@@ -5855,7 +5722,6 @@ Model {
       BackgroundColor	      "red"
       ShowName		      off
       RequestExecContextInheritance off
-      Variant		      off
       Object {
 	$PropName		"MaskObject"
 	$ObjectID		22
@@ -5868,6 +5734,8 @@ Model {
 	Location		[134, 55, 3840, 2160]
 	Open			off
 	PortBlocksUseCompactNotation off
+	SetDomainSpec		off
+	DomainSpecType		"Deduce"
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5919,12 +5787,13 @@ Model {
 	  Position		  [285, 229, 440, 261]
 	  ZOrder		  554
 	  RequestExecContextInheritance	off
-	  Variant		  off
 	  System {
 	    Name		    "STOP IF JOINTS HIT THE LIMITS"
 	    Location		    [134, 55, 3840, 2160]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -5990,12 +5859,13 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
-	      Variant		      off
 	      System {
 		Name			"MATLAB Function"
 		Location		[121, 45, 868, 1245]
 		Open			off
 		PortBlocksUseCompactNotation off
+		SetDomainSpec		off
+		DomainSpecType		"Deduce"
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -6007,7 +5877,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"3782"
+		SIDHighWatermark	"3785"
 		Block {
 		  BlockType		  Inport
 		  Name			  "umin"
@@ -6046,20 +5916,20 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "479::3781"
+		  SID			  "479::3784"
 		  Ports			  [1, 1]
 		  Position		  [270, 230, 320, 270]
-		  ZOrder		  131
+		  ZOrder		  134
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "479::3780"
+		  SID			  "479::3783"
 		  Tag			  "Stateflow S-Function jointsControl 18"
 		  Ports			  [4, 2]
 		  Position		  [180, 102, 230, 203]
-		  ZOrder		  130
+		  ZOrder		  133
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[4 2]"
 		  SFunctionDeploymentMode off
@@ -6073,9 +5943,9 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "479::3782"
+		  SID			  "479::3785"
 		  Position		  [460, 241, 480, 259]
-		  ZOrder		  132
+		  ZOrder		  135
 		}
 		Block {
 		  BlockType		  Outport
@@ -6086,28 +5956,28 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  29
+		  ZOrder		  36
 		  SrcBlock		  "umin"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  30
+		  ZOrder		  37
 		  SrcBlock		  "umax"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  2
 		}
 		Line {
-		  ZOrder		  31
+		  ZOrder		  38
 		  SrcBlock		  "u"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  3
 		}
 		Line {
-		  ZOrder		  32
+		  ZOrder		  39
 		  SrcBlock		  "tol"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
@@ -6115,7 +5985,7 @@ Model {
 		}
 		Line {
 		  Name			  "inRange"
-		  ZOrder		  33
+		  ZOrder		  40
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -6123,14 +5993,14 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  34
+		  ZOrder		  41
 		  SrcBlock		  " Demux "
 		  SrcPort		  1
 		  DstBlock		  " Terminator "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  35
+		  ZOrder		  42
 		  SrcBlock		  " SFunction "
 		  SrcPort		  1
 		  DstBlock		  " Demux "
@@ -6193,12 +6063,13 @@ Model {
 	  Position		  [285, 339, 440, 371]
 	  ZOrder		  556
 	  RequestExecContextInheritance	off
-	  Variant		  off
 	  System {
 	    Name		    "STOP IF THERE ARE SPIKES IN THE ENCODERS"
 	    Location		    [134, 55, 3840, 2160]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -6247,12 +6118,13 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
-	      Variant		      off
 	      System {
 		Name			"MATLAB Function"
 		Location		[121, 45, 868, 1245]
 		Open			off
 		PortBlocksUseCompactNotation off
+		SetDomainSpec		off
+		DomainSpecType		"Deduce"
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -6264,7 +6136,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"3782"
+		SIDHighWatermark	"3785"
 		Block {
 		  BlockType		  Inport
 		  Name			  "u"
@@ -6285,20 +6157,20 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "485::3781"
+		  SID			  "485::3784"
 		  Ports			  [1, 1]
 		  Position		  [270, 230, 320, 270]
-		  ZOrder		  131
+		  ZOrder		  134
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "485::3780"
+		  SID			  "485::3783"
 		  Tag			  "Stateflow S-Function jointsControl 14"
 		  Ports			  [2, 2]
 		  Position		  [180, 100, 230, 160]
-		  ZOrder		  130
+		  ZOrder		  133
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[2 2]"
 		  SFunctionDeploymentMode off
@@ -6312,9 +6184,9 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "485::3782"
+		  SID			  "485::3785"
 		  Position		  [460, 241, 480, 259]
-		  ZOrder		  132
+		  ZOrder		  135
 		}
 		Block {
 		  BlockType		  Outport
@@ -6325,7 +6197,7 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  21
+		  ZOrder		  26
 		  SrcBlock		  "u"
 		  SrcPort		  1
 		  Points		  [120, 0]
@@ -6333,7 +6205,7 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  22
+		  ZOrder		  27
 		  SrcBlock		  "delta_u_max"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
@@ -6341,7 +6213,7 @@ Model {
 		}
 		Line {
 		  Name			  "noSpikes"
-		  ZOrder		  23
+		  ZOrder		  28
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -6349,14 +6221,14 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  24
+		  ZOrder		  29
 		  SrcBlock		  " Demux "
 		  SrcPort		  1
 		  DstBlock		  " Terminator "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  25
+		  ZOrder		  30
 		  SrcBlock		  " SFunction "
 		  SrcPort		  1
 		  DstBlock		  " Demux "
@@ -6441,7 +6313,6 @@ Model {
       BackgroundColor	      "green"
       ShowName		      off
       RequestExecContextInheritance off
-      Variant		      off
       Object {
 	$PropName		"MaskObject"
 	$ObjectID		23
@@ -6453,6 +6324,8 @@ Model {
 	Location		[134, 55, 3840, 2160]
 	Open			off
 	PortBlocksUseCompactNotation off
+	SetDomainSpec		off
+	DomainSpecType		"Deduce"
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6472,12 +6345,13 @@ Model {
 	  Position		  [15, 15, 140, 75]
 	  ZOrder		  -7
 	  RequestExecContextInheritance	off
-	  Variant		  off
 	  System {
 	    Name		    "GAZEBO_SYNCHRONIZER"
 	    Location		    [134, 55, 3840, 2160]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -6510,6 +6384,7 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Simulator Synchronizer"
 	      SourceType	      "Simulator Synchronizer"
 	      SourceProductName	      "WholeBodyToolbox"
+	      MultiThreadCoSim	      "auto"
 	      period		      "Config.tStep"
 	      serverPortName	      "'/clock/rpc'"
 	      clientPortName	      "'/WBT_synchronizer/rpc:o'"
@@ -6549,12 +6424,13 @@ Model {
 	  Position		  [-170, 12, -45, 72]
 	  ZOrder		  -9
 	  RequestExecContextInheritance	off
-	  Variant		  off
 	  System {
 	    Name		    "REAL_TIME_SYNC"
 	    Location		    [134, 55, 3840, 2160]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
+	    SetDomainSpec	    off
+	    DomainSpecType	    "Deduce"
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -6588,6 +6464,7 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Real Time Synchronizer"
 	      SourceType	      "Real Time Synchronizer"
 	      SourceProductName	      "WholeBodyToolbox"
+	      MultiThreadCoSim	      "auto"
 	      period		      "Config.tStep"
 	    }
 	  }
@@ -6622,6 +6499,7 @@ Model {
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Clock"
 	  SourceType		  "YARP Clock"
 	  SourceProductName	  "WholeBodyToolbox"
+	  MultiThreadCoSim	  "auto"
 	}
 	Line {
 	  ZOrder		  1
@@ -6680,10 +6558,10 @@ Model {
       }
     }
     Line {
-      ZOrder		      396
+      ZOrder		      429
       SrcBlock		      "PD + GRAVITY CONTROL"
       SrcPort		      1
-      DstBlock		      "SetReferences"
+      DstBlock		      "SetReferences1"
       DstPort		      1
     }
     Line {
@@ -6694,7 +6572,7 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      414
+      ZOrder		      430
       SrcBlock		      "GetMeasurement1"
       SrcPort		      1
       DstBlock		      "Goto1"
@@ -6704,7 +6582,7 @@ Model {
 }
 #Finite State Machines
 #
-#   Stateflow 80000012
+#   Stateflow 80000014
 #
 #
 Stateflow {
@@ -6713,7 +6591,7 @@ Stateflow {
     name		    "jointsControl"
     created		    "12-Mar-2015 18:23:09"
     isLibrary		    0
-    sfVersion		    80000012
+    sfVersion		    80000014
     firstTarget		    60
   }
   chart {
@@ -6725,8 +6603,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    subviewS {
-    }
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -6876,9 +6752,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 11 0 0]
     viewObj		    10
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -7180,8 +7053,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 27 0 0]
     viewObj		    26
-    subviewS {
-    }
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -7331,8 +7202,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 35 0 0]
     viewObj		    34
-    subviewS {
-    }
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
