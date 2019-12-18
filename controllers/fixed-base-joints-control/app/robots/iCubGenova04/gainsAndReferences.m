@@ -13,8 +13,15 @@ if Config.MOVE_JOINTS
     KP(12:end,12:end) = 45*diag(ones(1,12));
     KD(12:end,12:end) = 2*sqrt(KP(12:end,12:end))*0.25;
     
-     Ref.Amplitude = 7.5*[0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 1 1, 0 0 0 0 1 1];
-     Ref.Frequency = 0.5*[0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 1 1, 0 0 0 0 1 1];
+    KP(8,8) = 40;
+    KD(8,8) = 2*sqrt(KP(8,8))*0.15;
+    
+    KP(15:17,15:17) = 45*diag(ones(1,3));
+    KD(15:17,15:17) = 2*sqrt(KP(15:17,15:17))*0.15;
+    
+    
+     Ref.Amplitude = 7.5*[0 0 0, 0 0 0 0, 0 0 0 0, 1 0 0 1 1 1, 0 0 0 0 1 1];
+     Ref.Frequency = 0.5*[0 0 0, 0 0 0 0, 0 0 0 0, 1 0 0 1 1 1, 0 0 0 0 1 1];
 
 %      Ref.Amplitude = 7.5*ones(1,ROBOT_DOF);
 %      Ref.Frequency = 0.5*ones(1,ROBOT_DOF);
